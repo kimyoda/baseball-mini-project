@@ -1,8 +1,8 @@
-import { gugudan } from './baseball'
+import { baseball } from './baseball'
 
 describe('baseball', () => {
-  it('gugudan 함수는 두 인자의 곱을 반환합니다.', () => {
-    expect(gugudan(2, 3)).toBe(6);
+  it('baseball 함수는 두 인자의 곱을 반환합니다.', () => {
+    expect(baseball(2, 3)).toBe(6);
   })
 });
 

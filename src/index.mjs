@@ -1,11 +1,7 @@
-import { gugudan } from "./baseball.js";
-import { insertGuGuDanElement } from "./test.js";
-
-const gugudanBox = document.querySelector(".gugudan");
+import { baseball } from "./baseball.js";
 
 const init = () => {
-  const value = gugudan(2, 3);
-  insertGuGuDanElement(gugudanBox, value);
+  console.log(baseball(2, 3));
 }
 
 init();
