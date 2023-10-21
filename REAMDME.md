@@ -22,7 +22,12 @@ npm i
 
 <br />
 
-### 4. jest 테스트 실행
+### 4. HTML 실행 시 Vsc Live Server로 실행
+- Live Server로 실행하지 않으면 CORS 에러 나옴 
+
+<br />
+
+### 5. jest 테스트 실행
 - root폴더에서 아래 명령어를 통해 jest 실행할 수 있음
 ```
 npm run test
