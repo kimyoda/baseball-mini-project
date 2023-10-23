@@ -1,44 +1,43 @@
-import { createCPUNumbers } from './createCPUNumbers.js';
-import { validateUserNumbers } from './validateUserNumbers.js';
-import { restartButton } from '../index.js';
-
-const CPUNumbers = createCPUNumbers();
-
-export function compareNumbers() {
-  let userNumbers = validateUserNumbers();
-
-  let strike = 0;
-  let ball = 0;
-
-  if (!userNumbers) {
-    return;
-  } else {
-    userNumbers.forEach((value, index) => {
-      if (value === CPUNumbers[index]) strike++;
-      else if (CPUNumbers.includes(value)) ball++;
-    });
+function lengthValidity(userInput) {
+  if (userInput.length !== 3) {
+    return alert('3자리 숫자를 입력해주세요.');
   }
-
-  const resultMessage = document.querySelector('#result');
-  if (strike === 0 && ball === 0) {
-    resultMessage.innerText = '낫싱';
-  } else if (strike > 0 && ball > 0) {
-    resultMessage.innerText = `${ball}볼 ${strike}스트라이크`;
-  } else if (ball > 0) {
-    resultMessage.innerText = `${ball}볼`;
-  } else if (strike > 0) {
-    resultMessage.innerText = `${strike}스트라이크`;
+  return true;
+}
+function typeValidity(userInput) {
+  if (isNaN(parseInt(userInput))) {
+    return alert('숫자로만 입력해주세요.');
   }
-
-  if (strike === 3) {
-    resultMessage.innerText = `🎉정답을 맞히셨습니다🎉
-
-    게임을 새로 시작하시겠습니까?
-
-    `;
-
-    restartButton.style.display = 'block';
+  return true;
+}
+function duplicationValidity(userInput) {
+  const setUserInput = new Set(userInput);
+  if (userInput.length !== setUserInput.size) {
+    return alert('모두 다른 숫자로 입력해주세요.');
   }
-
-  restartButton.addEventListener('click', () => location.reload());
+  return true;
+}
+function rangeValidity(userInput) {
+  const range = [...Array(10).keys()].splice(1);
+  for (let i = 0; i < userInput.length; i++){
+    if (!range.includes(parseInt(userInput[i]))) {
+      return alert('1~9사이의 숫자로 입력해주세요.');
+    }
+  }
+  return true;
+}
+export default function CheckUserInputValidity(userInput) {
+  if (!lengthValidity(userInput)) {
+    return false;
+  }
+  if (!typeValidity(userInput)) {
+    return false;
+  }
+  if (!duplicationValidity(userInput)) {
+    return false;
+  }
+  if (!rangeValidity(userInput)) {
+    return false;
+  }
+  return true;
 }

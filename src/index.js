@@ -1,11 +1,20 @@
-import { compareNumbers } from './components/compareNumbers.js';
+import { $ } from './dom.js';
+import CheckUserInputValidity from './checkUserInputValidity.js';
+import { MakeRandomNumber } from './makeRandomNumber.js';
+import { PrintResultWords } from './printResultWords.js';
 
-const checkButton = document.querySelector('#submit');
-export let restartButton = document.querySelector('#game-restart-button');
-checkButton.addEventListener('click', handleCheckButtonFunction);
-restartButton.style.display = 'none';
-
-function handleCheckButtonFunction(e) {
-  e.preventDefault();
-  compareNumbers();
+function start() {  
+  $('#result').innerHTML = '';
+  $('#submit').type = 'button';
 }
+export default function BaseballGame() {
+  start();
+  const computerNumber = MakeRandomNumber();
+  $('#submit').addEventListener('click', () => {
+    const userInput = $('#user-input').value;
+    if (CheckUserInputValidity(userInput)) {
+      PrintResultWords(computerNumber, userInput);
+    }
+  });
+}
+BaseballGame();

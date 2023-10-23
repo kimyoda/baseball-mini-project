@@ -6,6 +6,8 @@ export const baseball = () => {
   };
 }
 
-export const baseball2 = (num1, num2) => {
-  return num1 * num2;
+export default class BaseballGame {
+  play(computerInputNumbers, userInputNumbers) {
+    return "결과 값 String";
+  }
 }

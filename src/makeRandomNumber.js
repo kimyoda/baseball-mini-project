@@ -1,13 +1,16 @@
-export function createCPUNumbers() {
-  let CPUNumbersArray = [];
-
-  while (CPUNumbersArray.length <= 2) {
-    let randomCPUNums = MissionUtils.Random.pickNumberInRange(1, 9);
-    if (CPUNumbersArray.indexOf(randomCPUNums) < 0) {
-      CPUNumbersArray.push(randomCPUNums);
+function makeRandomNumber_one() {
+  return MissionUtils.Random.pickNumberInRange(1, 9);
+}
+function checkAlreadyContain(numArray, nowNum) {
+  return (numArray.includes(nowNum)) ? false : true;
+}
+export function MakeRandomNumber() {
+  let numbers = [];
+  while (numbers.length < 3) {
+    let tempRandomNum = makeRandomNumber_one();
+    if (checkAlreadyContain(numbers, tempRandomNum)) {
+      numbers.push(tempRandomNum);
     }
   }
-
-  const toStringCPUNumbers = CPUNumbersArray.map((val) => String(val));
-  return toStringCPUNumbers;
+  return numbers.join('');
 }
