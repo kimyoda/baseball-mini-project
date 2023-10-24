@@ -62,7 +62,7 @@ describe("구현 결과가 요구사항과 일치해야 한다.", () => {
 
     // then
     cy.get(SELECTOR.SUBMIT)
-      .click()
+      .submit()
       .then(() => {
         expect(alertStub).to.be.called;
       });

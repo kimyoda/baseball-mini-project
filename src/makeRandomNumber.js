@@ -1,9 +1,15 @@
 function makeRandomNumber_one() {
   return MissionUtils.Random.pickNumberInRange(1, 9);
 }
+
 function checkAlreadyContain(numArray, nowNum) {
-  return (numArray.includes(nowNum)) ? false : true;
+  if (numArray.includes(nowNum)) {
+    return false;
+  } else {
+    return true;
+  }
 }
+
 export function MakeRandomNumber() {
   let numbers = [];
   while (numbers.length < 3) {
@@ -13,4 +19,4 @@ export function MakeRandomNumber() {
     }
   }
   return numbers.join('');
-}
+} // ㅇㅋ

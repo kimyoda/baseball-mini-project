@@ -6,4 +6,4 @@ export default function Restart() {
   $('#user-input').value = null;
   $('#submit').disabled = false;
   BaseballGame();
-}
+} // ㅇㅋ

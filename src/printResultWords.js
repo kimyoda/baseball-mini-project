@@ -1,5 +1,5 @@
 import { $ } from './dom.js';
-import { CheckCorrectness } from './checkCorrectness.js';
+import CheckUserInputValidity from './checkUserInputValidity.js';
 import { DecideResultWords } from './decideResultWords.js';
 import { PrintRestartButton } from './printRestartButton.js';
 export function PrintResultWords(computerBall, userBall) {
@@ -12,4 +12,4 @@ export function PrintResultWords(computerBall, userBall) {
   else {
     $('#result').innerHTML = DecideResultWords(computerBall, userBall);
   }
-}
+} //ㅇㅋ

@@ -1,7 +1,10 @@
-import { baseball } from './baseball.js';
+import  { Baseball }  from './baseball.js';
 
 const init = () => {
-  console.log(baseball(2, 3));
+  const BaseballGame = new Baseball();
+  const result = BaseballGame.play([2, 3], [4, 5]);
+  console.log(result);
 };
 
 init();
+// 없음.

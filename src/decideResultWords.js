@@ -16,5 +16,5 @@ export function DecideResultWords(computerBall, userBall) {
       result = `${ballCount[1]}볼 ${ballCount[0]}스트라이크`;
       break;
   }
-  return result;
+  return result; //있음
 }

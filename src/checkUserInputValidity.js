@@ -1,15 +1,17 @@
-function lengthValidity(userInput) {
+function lengthValidity(userInput) { // 있음
   if (userInput.length !== 3) {
     return alert('3자리 숫자를 입력해주세요.');
   }
   return true;
 }
+
 function typeValidity(userInput) {
   if (isNaN(parseInt(userInput))) {
     return alert('숫자로만 입력해주세요.');
   }
   return true;
 }
+
 function duplicationValidity(userInput) {
   const setUserInput = new Set(userInput);
   if (userInput.length !== setUserInput.size) {
@@ -17,6 +19,7 @@ function duplicationValidity(userInput) {
   }
   return true;
 }
+
 function rangeValidity(userInput) {
   const range = [...Array(10).keys()].splice(1);
   for (let i = 0; i < userInput.length; i++){
@@ -26,6 +29,7 @@ function rangeValidity(userInput) {
   }
   return true;
 }
+
 export default function CheckUserInputValidity(userInput) {
   if (!lengthValidity(userInput)) {
     return false;

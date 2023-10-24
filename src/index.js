@@ -1,5 +1,5 @@
 import { $ } from './dom.js';
-import CheckUserInputValidity from './checkUserInputValidity.js';
+import  CheckUserInputValidity  from './checkUserInputValidity.js';
 import { MakeRandomNumber } from './makeRandomNumber.js';
 import { PrintResultWords } from './printResultWords.js';
 
@@ -10,11 +10,15 @@ function start() {
 export default function BaseballGame() {
   start();
   const computerNumber = MakeRandomNumber();
-  $('#submit').addEventListener('click', () => {
+
+  // 폼 제출 이벤트에 리스너 추가
+
+  $('form').addEventListener('submit', (e) => {
+    e.preventDefault();
     const userInput = $('#user-input').value;
     if (CheckUserInputValidity(userInput)) {
       PrintResultWords(computerNumber, userInput);
     }
   });
 }
-BaseballGame();
+BaseballGame(); // 있음
