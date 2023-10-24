@@ -1,10 +1,25 @@
-import  { Baseball }  from './baseball.js';
+// 이벤트 리스너 등록
+import { $ } from './dom.js';
+import  CheckUserInputValidity  from './checkUserInputValidity.js';
+import { MakeRandomNumber } from './makeRandomNumber.js';
+import { PrintResultWords } from './printResultWords.js';
 
-const init = () => {
-  const BaseballGame = new Baseball();
-  const result = BaseballGame.play([2, 3], [4, 5]);
-  console.log(result);
-};
+function start() {  
+  $('#result').innerHTML = '';
+  $('#submit').type = 'button';
+}
+export default function BaseballGame() {
+  start();
+  const computerNumber = MakeRandomNumber();
 
-init();
-// 없음.
+  // 폼 제출 이벤트에 리스너 추가
+
+  $('form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const userInput = $('#user-input').value;
+    if (CheckUserInputValidity(userInput)) {
+      PrintResultWords(computerNumber, userInput);
+    }
+  });
+}
+BaseballGame(); // 있음

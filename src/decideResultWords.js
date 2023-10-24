@@ -1,6 +1,7 @@
-import { DecideBallCount } from './decideBallCount.js';
+// 입력된 숫자가 볼인지, 스트라이크인지 낫싱인지 만들어주는 모듈
+import { decideBallCount } from './decideBallCount.js';
 export function DecideResultWords(computerBall, userBall) {
-  const ballCount = DecideBallCount(computerBall, userBall);  //[strike,ball]순서로 return
+  const ballCount = decideBallCount(computerBall, userBall);  //[strike,ball]순서로 return
   
   switch (true) {
     case ballCount[0] === 0 && ballCount[1] === 0:

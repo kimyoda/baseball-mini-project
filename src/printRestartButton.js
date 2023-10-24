@@ -1,3 +1,4 @@
+// 게임을 새로 시작하냐고 묻는 버튼
 import { $ } from './dom.js';
 import Restart from './restart.js';
 export function PrintRestartButton() {

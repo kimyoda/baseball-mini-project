@@ -1,5 +1,6 @@
+// 재시작하는 곳
 import { $ } from './dom.js';
-import BaseballGame from '../index.js';
+import BaseballGame from './index.mjs';
 
 export default function Restart() {
   $('#result').innerHTML = '';

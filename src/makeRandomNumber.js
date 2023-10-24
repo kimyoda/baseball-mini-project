@@ -1,3 +1,4 @@
+// 난수 설정 
 function makeRandomNumber_one() {
   return MissionUtils.Random.pickNumberInRange(1, 9);
 }

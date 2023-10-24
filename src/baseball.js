@@ -1,3 +1,4 @@
+// 테스트 코드
 export const baseball = () => {
   // test 코드임
   // 야구 게임 로직 추가

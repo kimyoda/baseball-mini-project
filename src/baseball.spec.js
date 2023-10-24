@@ -1,3 +1,4 @@
+// 테스트 코드 실행문
 describe("구현 결과가 요구사항과 일치해야 한다.", () => {
   const baseUrl = "../index.html";
   const SELECTOR = {
@@ -6,6 +7,8 @@ describe("구현 결과가 요구사항과 일치해야 한다.", () => {
     RESULT: "#result",
   };
 
+  // 케이스 이전 실행할 코드 정의
+  // Cypress 커스텀 명령 정의, 무작위 숫자를 반환 
   before(() => {
     Cypress.Commands.add("stubRandomReturns", (returnValues = []) => {
       const randomStub = cy.stub();
@@ -68,3 +71,4 @@ describe("구현 결과가 요구사항과 일치해야 한다.", () => {
       });
   });
 });
+
